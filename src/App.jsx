@@ -7,16 +7,13 @@ import Footer from "./footer";
 
 const App = () => {
   return (
-    <div className="">
+    <>
       <Navbar />
-      <div className="bg-black"></div>
-      {/* <main>
+      <main>
         <Home />
         <About />
-        <Contact />
       </main>
-      <Footer /> */}
-    </div>
+    </>
   );
 };
 

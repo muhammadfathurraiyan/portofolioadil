@@ -7,7 +7,7 @@ const Navbar = () => {
   };
   return (
     <header id="header">
-      <nav className="h-12 flex justify-between items-center bg-primary px-24 max-md:px-16 max-sm:px-8">
+      <nav className="h-12 fixed w-full top-0 left-0 z-10 flex justify-between items-center bg-primary px-36 max-lg:px-24 max-sm:px-8">
         <h1 className="font-bold text-xl text-background">Adil.</h1>
         <ul
           className={`${
@@ -30,6 +30,15 @@ const Navbar = () => {
               href="#about"
             >
               About
+            </a>
+          </li>
+          <li>
+            <a
+              onClick={handleToggle}
+              className={`${toggle ? "block" : "max-sm:hidden"}`}
+              href="#portfolio"
+            >
+              Portfolio
             </a>
           </li>
           <li>
