@@ -1,31 +1,44 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaStream, FaTimes } from "react-icons/fa";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => {
     setToggle(!toggle);
   };
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (!ref.current.contains(e.target)) {
+        setToggle(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
   return (
     <header id="header">
-      <nav className="h-12 fixed w-full top-0 left-0 z-10 flex justify-between items-center bg-primary px-36 max-lg:px-24 max-sm:px-8">
+      <nav
+        ref={ref}
+        className="h-12 fixed w-full top-0 left-0 z-10 flex justify-between items-center bg-primary px-36 max-lg:px-24 max-sm:px-8"
+      >
         <h1 className="font-bold text-xl text-background">Adil.</h1>
         <ul
           className={`${
-            toggle ? "max-sm:w-1/2" : "max-sm:w-0"
+            toggle ? "max-sm:w-2/3" : "max-sm:w-0"
           } duration-500 ease-in-out flex gap-8 text-background max-sm:absolute max-sm:right-0 max-sm:top-0 max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:bg-secondary max-sm:h-screen overflow-hidden`}
         >
           <li>
-            <a
-              onClick={handleToggle}
-              className={`${toggle ? "block" : "max-sm:hidden"}`}
-              href="#home"
-            >
+            <a className={`${toggle ? "block" : "max-sm:hidden"}`} href="#home">
               Home
             </a>
           </li>
           <li>
             <a
-              onClick={handleToggle}
               className={`${toggle ? "block" : "max-sm:hidden"}`}
               href="#about"
             >
@@ -34,7 +47,6 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              onClick={handleToggle}
               className={`${toggle ? "block" : "max-sm:hidden"}`}
               href="#portfolio"
             >
@@ -43,7 +55,6 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              onClick={handleToggle}
               className={`${toggle ? "block" : "max-sm:hidden"}`}
               href="#contact"
             >

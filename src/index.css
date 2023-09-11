@@ -7,4 +7,7 @@
   body {
     @apply font-['Inter',_sans-serif] bg-background text-font;
   }
+  html {
+    @apply scroll-smooth
+  }
 }
