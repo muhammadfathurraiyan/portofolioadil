@@ -14,7 +14,9 @@ const App = () => {
         <Home />
         <About />
         <Portfolio />
+        <Contact />
       </main>
+      <Footer />
     </>
   );
 };

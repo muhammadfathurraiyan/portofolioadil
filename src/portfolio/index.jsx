@@ -1,13 +1,14 @@
 import React from "react";
 
 const index = () => {
+
   const elements = [];
 
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 5; i++) {
     elements.push(
       <div
-        key={Math.random() * 100}
-        className="flex flex-col items-center gap-2 w-[300px] grow p-2 border rounded-lg border-secondary"
+        key={Math.random() * 10}
+        className="flex flex-col gap-2 w-[300px] grow p-2 border rounded-lg border-secondary"
       >
         <div className="h-[150px] w-full">
           <img
