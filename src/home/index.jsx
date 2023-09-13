@@ -4,7 +4,7 @@ import { FaBehance, FaInstagram, FaLinkedin } from "react-icons/fa";
 const Home = () => {
   return (
     <section id="home">
-      <div className="relative top-12 flex items-center justify-between gap-8 h-screen max-sm:h-[120vh] px-36 py-32 max-sm:py-12 max-lg:px-24 max-sm:px-8 max-md:flex-wrap">
+      <div className="relative top-12 flex items-center justify-between gap-8 max-sm:gap-4 h-screen max-sm:h-[120vh] px-36 py-32 max-sm:py-12 max-lg:px-24 max-sm:px-8 max-md:flex-wrap">
         <div className="w-1/2 max-md:w-full">
           <h1 className="text-4xl font-bold">Hi I'm Tengku Adil Parisi</h1>
           <div className="flex items-center gap-2 mt-2">
